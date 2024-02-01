@@ -1,0 +1,34 @@
+{
+  "name": "linting",
+  "version": "1.0.0",
+  "description": "Lab 7 ",
+  "main": "Index.js",
+  "scripts": {
+    "test": "",
+    "prepare": "husky install",
+    "lint": "eslint .",
+    "precommit": "lint-staged",
+    "lint-staged": "lint-staged",
+    "pre-commit": "npm run precommit",
+    "debug": "echo 'Pre-commit hook running...'"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "author": "Khactpc07495",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.1"
+  }
+}

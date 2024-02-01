@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm test
+# Run ESLint
+# Run ESLint
+npm run lint
+
+# Check if ESLint found errors
+if [ $? -ne 0 ]; then
+  echo "ESLint found errors. Aborting commit."
+  exit 1
+fi
